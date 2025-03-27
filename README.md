@@ -1,32 +1,39 @@
 # IOT-Assignment3
 This is my IOT assignment regarding the creation of Environmental Monitoring System
+
 **IoT Environmental Monitoring System**
+
 **CIS600 Internet of Things: Application Development - Assignment 3**
 
 **Project Overview**
+
 This project implements a cloud-based IoT system for environmental monitoring using virtual sensors (temperature, humidity, CO2) that publish data via MQTT to ThingSpeak for visualization and analysis.
 
-Features
-✅ Virtual Sensor Station - Simulates environmental sensors with randomized data
-✅ Real-time Monitoring - Subscribes to MQTT for live data display
-✅ Cloud Integration - Stores and visualizes data on ThingSpeak
-✅ Historical Analysis - Retrieves and displays past sensor readings
+**Features**
 
-**System Architecture**
+**✅ Virtual Sensor Station:** Simulates environmental sensors with randomized data.
 
-Virtual Sensors → MQTT Broker → ThingSpeak Cloud → Data Visualization
-       ↑               ↑                ↑
-       |               |                |
-  (Python)       (Eclipse Mosquitto) (Web Dashboard)
+**✅ Real-time Monitoring:** Subscribes to MQTT for live data display.
 
-**Installation & Setup**
+**✅ Cloud Integration:** Stores and visualizes data on ThingSpeak.
+
+**✅ Historical Analysis:** Retrieves and displays past sensor readings.
+
+**System Architecture:**
+
+Virtual Sensors(Python) → MQTT Broker(Eclipse Mosquitto) → ThingSpeak Cloud(Web Dashboard) → Data Visualization(Web Dashboard)
+  
+
+**Installation & Setup:**
 
 **1. Prerequisites**
+
 Python 3.8+
 Required libraries:
 pip install paho-mqtt requests numpy
 
 **2. Configuration**
+
 ThingSpeak Setup
 
 Create a channel at thingspeak.com
@@ -52,11 +59,12 @@ READ_API_KEY = "YOUR_READ_API_KEY"
 
 **Usage:**
 
-**1. Run the Virtual Station
-**
+**1.Run the Virtual Station**
+
 python3 virtual_station.py
 
 **Expected Output:**
+
 Starting Mac IoT Station: mac_station_1234  
 MQTT Published: {"temperature": 23.45, ...}  
 ThingSpeak Status: HTTP 200  
@@ -66,6 +74,7 @@ ThingSpeak Status: HTTP 200
 python3 subscriber.py
 
 **Expected Output:**
+
 NEW SENSOR DATA  
 Temperature: 23.45°C  
 Humidity: 56.78%  
@@ -76,6 +85,7 @@ CO2: 1200ppm
 python3 historical_data.py
 
 **Expected Output:**
+
 Historical Data - Last 5 Hours  
 Timestamp: 2025-03-27 14:30:00  
 Temperature: 23.45°C  
