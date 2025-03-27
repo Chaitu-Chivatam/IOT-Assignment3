@@ -41,7 +41,7 @@ def publish_to_thingspeak(data):
     }
     try:
         response = requests.get(THINGSPEAK_URL, params=params)
-        print(f"☁️ ThingSpeak Status: HTTP {response.status_code}")
+        print(f"ThingSpeak Status: HTTP {response.status_code}")
     except Exception as e:
         print(f"ThingSpeak Error: {str(e)}")
 
